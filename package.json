@@ -1,0 +1,19 @@
+{
+  "name": "final-project-team-20",
+  "version": "1.0.0",
+  "description": "Package file for team 20 final project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-sp22/final-project-team-20.git"
+  },
+  "author": "team 20",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-sp22/final-project-team-20/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-sp22/final-project-team-20#readme"
+}
