@@ -70,5 +70,34 @@
         </article>
     </main>
     <button type="button" id="create-calc-button"><i class="fas fa-calculator"></i></button>
+
+    <div id="modal-backdrop" class="hidden"></div>
+    <div id="create-calc-modal" class="hidden">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h3>Create a Calculator</h3>
+          <button type="button" class="modal-close-button">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="calc-input-element">
+            <label for="calc-text-input">Calculator Name</label>
+            <textarea id="calc-text-input"></textarea>
+          </div>
+          <div class="calc-input-element">
+            <label for="calc-attribution-input">Author</label>
+            <input type="text" id="calc-attribution-input">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="modal-cancel-button">Cancel</button>
+          <button type="button" class="modal-accept-button">Create Calculator</button>
+        </div>
+
+      </div>
+    </div>
+
 </body>
 </html>
