@@ -48,6 +48,13 @@ function clearCalcInputValues() {
 function handleModalAcceptClick() {
     var calcName = document.getElementById('calc-name-input').value;
     var calcDescription = document.getElementById('calc-description-input').value;
+
+    if (calcName && calcDescription) {
+        allCalcs.push({
+            name: calcName,
+            description: calcDescription 
+        })
+    }
 }
 
 function doSearchUpdate() {
