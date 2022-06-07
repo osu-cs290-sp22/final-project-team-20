@@ -1,4 +1,5 @@
 
+
 var fs = require('fs');
 var path = require('path');
 var express = require('express');
@@ -11,25 +12,25 @@ var app = express();
 
 
 
-/*app.engine('handlebars', exphbs.engine(
+app.engine('handlebars', exphbs.engine(
 	{defaultLayout: 'base'}
-	));*/
+	));
 
-app.engine('handlebars', exphbs.engine({defaultLayout: 'null'}));
-
+app.engine('handlebars', exphbs.engine({defaultLayout: 'base'}));
 app.set('view engine', 'handlebars');
+
 
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
-   res.sendFile(path.join(__dirname, '/public/calc.html'));
+   res.status(200).sendFile(path.join(__dirname, '/public/calc.html'));
 });
 
 
 
 
 app.get('*', function (req, res) {
-   res.sendFile(path.join(__dirname, '/public/404.html'));
+   res.status(404).render('404');
 });
 
 app.listen(port, function() {
