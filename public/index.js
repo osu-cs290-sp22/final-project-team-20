@@ -10,6 +10,14 @@
 
 var allCalcs = [];
 
+function addField()
+
+function populateInputs()
+
+function readInputs()
+
+function doCalculation()
+
 function createCalculator(calcTitle, calcDescription, calcAuthor) {
      var newCalc = Handlebars.templates.calc({
          title: calcTitle,
@@ -100,7 +108,9 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     var modalAcceptButton = document.querySelector('#create-calc-modal .modal-accept-button');
-
+    if (modalAcceptButton) {
+        modalAcceptButton.addEventListener
+    }
     var searchButton = document.getElementById('navbar-search-button');
     
     var searchInput = document.getElementById('navbar-search-input');
