@@ -10,21 +10,22 @@
 
 var allCalcs = [];
 
-function addField()
+// function addField()
 
-function populateInputs()
+// function populateInputs()
 
-function readInputs()
+// function readInputs()
 
-function doCalculation()
+// function doCalculation()
 
-function createCalculator(calcTitle, calcDescription, calcAuthor) {
-     var newCalc = Handlebars.templates.calc({
-         title: calcTitle,
-         description: calcDescription
-     })
-    var calcContainer = document.querySelector('calc-container');
+function createCalculator(calcName, calcDescription) {
+    var newCalc = Handlebars.templates.calc({
+        name: calcName,
+        description: calcDescription,
+    })
+    var calcContainer = document.querySelector('main.calc-container');
     calcContainer.insertAdjacentHTML('beforeend', newCalc);
+    calcContainer.insertAdjacentHTML
 }
 
 function showCreateCalcModal() {
@@ -32,15 +33,17 @@ function showCreateCalcModal() {
     var createCalcModal = document.getElementById('create-calc-modal');
 
     modalBackdrop.classList.remove('hidden');
-    creatteCalcModal.classList.remove('hidden');
+    createCalcModal.classList.remove('hidden');
+
+    console.log('test 1')
 }
 
 function hideCreateCalcModal() {
     var modalBackdrop = document.getElementById('modal-backdrop');
     var createCalcModal = document.getElementById('create-calc-modal');
 
-    modalBackdrop.classList.remove('hidden');
-    creatteCalcModal.classList.remove('hidden');
+    modalBackdrop.classList.add('hidden');
+    createCalcModal.classList.add('hidden');
 
     clearCalcInputValues();
 }
@@ -61,16 +64,43 @@ function handleModalAcceptClick() {
         allCalcs.push({
             name: calcName,
             description: calcDescription 
-        })
+        });
+        clearSearchAndReinsertCalcs();
+        hideCreateCalcModal();
+    }else{
+        alert('The Calculator Name, Description, and Equation must be specified.');
     }
 }
 
-function doSearchUpdate() {
+function clearSearchAndReinsertCalcs() {
+    document.getElementById('navbar-search-input').value = "";
+    doSearchUpdate();
+  }
 
+function doSearchUpdate() {
+    var searchQuery = document.getElementById('navbar-search-input').value;
+
+    var calcContainer = document.querySelector('.calc-container');
+    if (calcContainer) {
+        while (calcContainer.lastChild) {
+            calcContainer.removeChild(calcContainer.lastChild);
+        }
+    }
+
+    allCalcs.forEach(function (calc) {
+        if (calcMatchesSearchQuery(calc, searchQuery)) {
+            createCalculator(calc.name, calc.description);
+        }
+    });
 }
 
-function calcMatchesSearchQuery() {
+function calcMatchesSearchQuery(calc, searchQuery) {
+    if (!searchQuery) {
+        return true;
+    }
 
+        searchQuery = searchQuery.trim().toLowerCase();
+        return (calc.name + " " + calc.description).toLowerCase().indexOf(searchQuery) >= 0;
 }
 
 function parseCalcElem(calcElem) {
@@ -80,7 +110,7 @@ function parseCalcElem(calcElem) {
     calc.name = calcNameElem.textContent.trim();
 
 
-    var calcDescriptionElem = calc.Elem.querySelector('.calc-description');
+    var calcDescriptionElem = calcElem.querySelector('.calc-description');
     calc.description = calcDescriptionElem.textContent.trim();
 
     return calc;
@@ -95,25 +125,34 @@ window.addEventListener('DOMContentLoaded', function () {
     var createCalcButton = document.getElementById('create-calc-button');
     if (createCalcButton) {
         createCalcButton.addEventListener('click', showCreateCalcModal);
+        
     }
 
     var modalCancelButton = document.querySelector('#create-calc-modal .modal-cancel-button');
-    if (modalCancalButton) {
-        modalCancalButton.addEventListener('click', hideCreateCalcModal);
+    if (modalCancelButton) {
+        modalCancelButton.addEventListener('click', hideCreateCalcModal);
+        console.log("test 0");
     }
 
     var modalCloseButton = document.querySelector('#create-calc-modal .modal-close-button');
-    if (modalCancalButton) {
+    if (modalCloseButton) {
         modalCloseButton.addEventListener('click', hideCreateCalcModal);
+        console.log("test 0");
     }
 
     var modalAcceptButton = document.querySelector('#create-calc-modal .modal-accept-button');
     if (modalAcceptButton) {
-        modalAcceptButton.addEventListener
+        modalAcceptButton.addEventListener('click', handleModalAcceptClick)
     }
     var searchButton = document.getElementById('navbar-search-button');
+        if (searchButton) {
+            searchButton.addEventListener('click', doSearchUpdate);
+        }
     
     var searchInput = document.getElementById('navbar-search-input');
+        if (searchInput) {
+            searchInput.addEventListener('input', doSearchUpdate);
+        }
 
 
 })

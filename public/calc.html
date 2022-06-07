@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculators of Corvallis</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css" media="screen">
+
+    <script src="index.js" crossorigin="anonymous"> </script>
+    <script src="/calcTemplate.js" charset="utf-8" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+<body>
+
+
+
+    <header>
+        <!-- The <i> tag below includes the lizard hand icon from Font Awesome.  Do not directly style this element. -->
+        <a href="#"><h1 class="site-title"> Calculators of Corvallis</h1></a>
+
+        <nav class="navbar">
+            <ul class="navlist">
+                <li class="navitem navlink active"><a href="#">Home</a></li>
+                <li class="navitem navlink"><a href="/404.html">Past Problems</a></li>
+                <li class="navitem navbar-search">
+                    <input type="text" id="navbar-search-input" placeholder="Search...">
+                    <button type="button" id="navbar-search-button"><i class="fas fa-search"></i></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="calc-container">
+        <!-- The calculators below are just placeholders, but I did try to pick calculators from npm-->
+
+
+        <article class="calc">
+            <div class="calc-content">
+                <p class="calc-name">
+                    <a href="#">Molar Mass Calculator</a>
+                </p>
+                <p class="calc-description">
+                    This calculator finds the molar mass of a given compound.
+                </p>
+            </div>
+        </article>
+
+        <article class="calc">
+            <div class="calc-content">
+                <p class="calc-name">
+                    <a href="#">BMI Calculator</a>
+                </p>
+                <p class="calc-description">
+                    This calculator will help you calculate your Body Mass Index.
+                </p>
+            </div>
+        </article>
+
+        <article class="calc">
+            <div class="calc-content">
+                <p class="calc-name">
+                    <a href="#">Geodesics Calculator</a>
+                </p>
+                <p class="calc-description">
+                    This is a calculator for finding geodesics.
+                </p>
+            </div>
+        </article>
+    </main>
+    <button type="button" id="create-calc-button"><i class="fas fa-calculator"></i></button>
+
+    <div id="modal-backdrop" class="hidden"></div>
+    <div id="create-calc-modal" class="hidden">
+      <div class="modal-dialog">
+
+        <div class="modal-header">
+          <h3>Create a Calculator</h3>
+          <button type="button" class="modal-close-button">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="calc-input-element">
+            <label for="calc-name-input">Calculator Name</label>
+            <textarea id="calc-name-input"></textarea>
+          </div>
+          <div class="calc-input-element">
+            <label for="calc-description-input">Description</label>
+            <input type="text" id="calc-description-input">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="modal-cancel-button">Cancel</button>
+          <button type="button" class="modal-accept-button">Create Calculator</button>
+        </div>
+
+      </div>
+    </div>
+
+</body>
+</html>
