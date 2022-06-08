@@ -176,12 +176,63 @@ a:focus {
   outline: none;
 }
 
+
+/*********************specific.html Stuff************************/
+
+
+.input-container {
+  background-color: #171717;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 30px 10%;
+  display: block;
+  /*flex-wrap: wrap;*/
+  color: #e1e1e1;
+}
+
+.calc-input-element {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin: 10px 0;
+  padding: 20px;
+}
+
+.calc-input-element label {
+  font-weight: 600;
+  flex: 1 50px;
+  margin-right: 10px;
+}
+
+.calc-input-element input,
+.calc-input-element textarea {
+  flex: 6 200px;
+  padding: 8px;
+  font-size: 20px;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+}
+
+.calc-input-element textarea {
+  min-height: 64px;
+}
+
+#calc-instructions {
+  background-color: #171717;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 30px 10%;
+  display: block;
+  color: #e1e1e1;
+}
+
+
+/*******************Modal Stuff**************************/
+
+
 .hidden {
   display: none;
 }
-
-/* Add css for the "specific" calc page, add css for modal even though it's not used
- * make entire css unique, not just a tweeter copy.*/
 
  #modal-backdrop {
   position: fixed;
@@ -238,32 +289,6 @@ a:focus {
   padding: 20px;
 }
 
-.calc-input-element {
-  display: flex;
-  align-items: center;
-  font-size: 20px;
-  margin: 10px 0;
-}
-
-.calc-input-element label {
-  font-weight: 600;
-  flex: 1 75px;
-  margin-right: 10px;
-}
-
-.calc-input-element input,
-.calc-input-element textarea {
-  flex: 6 200px;
-  padding: 8px;
-  font-size: 20px;
-  border: 1px solid #aaa;
-  border-radius: 20px;
-}
-
-.calc-input-element textarea {
-  min-height: 64px;
-}
-
 .modal-footer {
   display: flex;
   justify-content: flex-end;
@@ -311,6 +336,8 @@ a:focus {
   font-weight: 400;
 }
 
+
+/********************Background Gradient Stuff*************************/
 
 
 .gradient_bg {
