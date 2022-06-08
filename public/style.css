@@ -13,12 +13,12 @@ a {
   padding: 10px 20px;
   font-size: 30px;
   font-weight: 400;
-  background-color: #246b28;
+  background-color: #171717;
   color: #fff;
 }
 
 .navbar {
-  background-color: #fff;
+  background-color: #333;
   font-size: 18px;
   line-height: 22px;
 }
@@ -48,47 +48,64 @@ a:focus {
 .navlink a {
   padding: 8px 10px;
   display: inline-block;
+  color: #fff;
 }
 
 .navlink.active {
-  box-shadow: inset 0 -3px #246b28;
+  box-shadow: inset 0 -3px #fff;
 }
 
 .navbar-search {
   float: right;
-  margin-right: 20px;
+  margin-right: 0px;
   padding: 0;
   line-height: 38px;
+  position: relative;
+  display: flex;
 }
 
 #navbar-search-input {
-  padding: 4px;
+  width: 100%;
+  border: 3px solid #e1e1e1;
+  padding: 5px;
+  border-radius: 0px 0 0 0px;
+  outline: none;
+  color: #9DBFAF;
   font-size: 16px;
   background-color: #eee;
-  border: 1px solid #dadada;
-  border-radius: 2px;
 }
 
 #navbar-search-input:focus {
   outline: none;
   background-color: #fff;
+  color: #000;
+  border: 3px solid #fff;
 }
 
 #navbar-search-button {
-  margin-left: -5px;
+  width: 30px;
+  height: 38px;
+  border: 1px solid #171717;
+  background: #171717;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 0px 0px 0;
+  cursor: pointer;
+  font-size: 20px;
+  /*margin-left: -5px;
   font-size: 16px;
   background: none;
   border: none;
-  color: #343434;
-  cursor: pointer;
+  color: #ddd;
+  cursor: pointer;*/
 }
 
 #navbar-search-button:hover {
-  color: #246b28;
+  color: #fff;
 }
 
 #navbar-search-button:focus {
-  color: #246b28;
+  color: #e1e1e1;
   outline: none;
 }
 
@@ -105,9 +122,10 @@ a:focus {
   display: flex;
   margin: 2px;
   padding: 20px;
-  border: 1px solid #dadada;
+  border: 2px solid #171717;
   border-radius: 20px;
-  background-color: #fff;
+  background-color: #171717;
+  color: #e1e1e1;
 }
 
 .calc-content {
@@ -115,10 +133,11 @@ a:focus {
   margin-left: 10px;
 }
 
-.calc-content .calc-name {
+.calc-content .calc-name a {
   margin-top: 8px;
   text-align: center;
   font-weight: bold;
+  color: #e1e1e1;
 }
 
 
@@ -131,7 +150,7 @@ a:focus {
   border: none;
   border-radius: 30px;
   font-size: 30px;
-  background-color: #246b28;
+  background-color: #171717;
   color: #fff;
   cursor: pointer;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
@@ -145,7 +164,7 @@ a:focus {
   width: 66px;
   border-radius: 33px;
   font-size: 36px;
-  background-color: #246b28;
+  background-color: #171717;
 }
 
 #create-calc-button:focus {
@@ -154,14 +173,6 @@ a:focus {
 
 .hidden {
   display: none;
-}
-
-.calc-instructions {
-
-}
-
-.calc-name-input {
-  
 }
 
 /* Add css for the "specific" calc page, add css for modal even though it's not used
@@ -241,6 +252,7 @@ a:focus {
   padding: 8px;
   font-size: 20px;
   border: 1px solid #aaa;
+  border-radius: 20px;
 }
 
 .calc-input-element textarea {
@@ -292,4 +304,37 @@ a:focus {
   margin: 10px 0;
   font-size: 36px;
   font-weight: 400;
+}
+
+
+
+.gradient_bg {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e,#23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 60s ease infinite;
+          animation: gradient 60s ease infinite;
+  height: 100vh;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
