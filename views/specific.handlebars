@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Name of Calculator</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css" media="screen">
+
+    <script src="index.js" crossorigin="anonymous"></script>
+    <script src="/calcTemplate.js" charset="utf-8" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+<body>
+
+
+
+    <header>
+        <!-- The <i> tag below includes the lizard hand icon from Font Awesome.  Do not directly style this element. -->
+        <a><h1 class="site-title">Name of Calculator</h1></a>
+
+        <nav class="navbar">
+            <ul class="navlist">
+                <li class="navitem navlink active"><a href="#">Home</a></li>
+                <li class="navitem navlink"><a href="/404.html">Past Problems</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="calc-instructions">We can put instructions for the calculator here or repeat the description from the homepage</div>
+
+    <main class="input-container">
+
+        {{#each inputs}}
+            {{> input}}
+        {{/each}}
+
+    </main>
+
+    <div id="modal-backdrop" class="hidden"></div>
+    <div id="display-answer-modal" class="hidden">
+        <div class="modal-dialog">
+
+            <div class="modal-header">
+                <h3 href="#">Get Answer</h3>
+                <button type="button" class="modal-close-button">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="answer-text">
+                    <a><strong>Answer:</strong><em>TemplatizeMe</em></a>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+</body>
+</html>

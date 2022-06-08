@@ -35,23 +35,42 @@
 
     <div id="calc-instructions">We can put instructions for the calculator here or repeat the description from the homepage</div>
 
+    <main class="input-container">
+        <div class="calc-input-element">
+            <label for="calc-description-input">Specified Input #1</label>
+            <input type="text" id="calc-input-2">
+        </div>
+        <div class="calc-input-element">
+            <label for="calc-description-input">Specified Input #2</label>
+            <input type="text" id="calc-input-2">
+        </div>
 
-    <div class="calc-input-element">
-        <label for="calc-name-input">Specified Input #1</label>
-        <textarea id="calc-input-1"></textarea>
+        <div class="calc-input-element">
+            <label for="calc-description-input">Specified Input #3</label>
+            <input type="text" id="calc-input-3">
+        </div>
+
+    </main>
+
+        <div id="modal-backdrop" class="hidden"></div>
+        <div id="display-answer-modal" class="hidden">
+            <div class="modal-dialog">
+
+                <div class="modal-header">
+                    <h3 href="#">Get Answer</h3>
+                    <button type="button" class="modal-close-button">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="answer-text">
+                        <a><strong>Answer:</strong><em>TemplatizeMe</em></a>
+                    </div>
+
+
+
+                </div>
+    
     </div>
-    <div class="calc-input-element">
-        <label for="calc-description-input">Specified Input #2</label>
-        <input type="text" id="calc-input-2">
-    </div>
-
-    <div class="calc-input-element">
-        <label for="calc-description-input">Another Input</label>
-        <input type="text" id="calc-input-3">
-    </div>
-
-
-
 
 </body>
 </html>
