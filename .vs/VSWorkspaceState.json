@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\public",
+    "\\views",
+    "\\views\\partials"
   ],
-  "SelectedNode": "\\C:\\Users\\cmors\\Source\\Repos\\final-project-team-20",
+  "SelectedNode": "\\public\\calc.html",
   "PreviewInSolutionExplorer": false
 }
