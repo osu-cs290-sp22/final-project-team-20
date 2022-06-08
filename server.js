@@ -12,10 +12,6 @@ var app = express();
 
 
 
-app.engine('handlebars', exphbs.engine(
-	{defaultLayout: 'base'}
-	));
-
 app.engine('handlebars', exphbs.engine({defaultLayout: 'base'}));
 app.set('view engine', 'handlebars');
 
