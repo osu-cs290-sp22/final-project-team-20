@@ -3,6 +3,8 @@
 * the assignment 5 template written by Robin Hess for his CS 290 Web Development
 * class.
 *
+* Method of storing functions in json files and parsing them in js taken from
+* https://stackoverflow.com/questions/36517173/how-to-store-a-javascript-function-in-json#:~:text=%22There%20is%20no%20way%20to,be%20expressed%20as%20a%20string 
 */
 
 
@@ -10,13 +12,40 @@
 
 var allCalcs = [];
 
-// function addField()
 
-// function populateInputs()
+function doCalculation() {
+    var functionArguments = document.getElementById('current-calc-arguments').textContent;
+    var functionBody = document.getElementById('current-calc-body').textContent;
 
-// function readInputs()
+    // console.log(functionArguments);
+    // console.log(functionBody);
 
-// function doCalculation()
+    var calcEquation = new Function(functionArguments, functionBody);
+    // console.log(calcEquation);
+
+    var inputFields = document.getElementsByClassName('calc-input-element');
+    var inputValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    for (var i = 0; i < inputFields.length; i++) {
+        var check = inputFields[i].querySelector('input, textarea').value;
+        // console.log(check);
+        if (!(check && parseFloat(check))) {
+            alert('All input fields must be fille with numbers to use the Calculator');
+            return;
+        }
+    }
+
+    for (var i = 0; i < inputFields.length; i++) {
+        var value = parseFloat(inputFields[i].querySelector('input, textarea').value);
+        inputValues[i] = value;
+    }
+
+    // var answer = calcEquation(inputValues[0], inputValues[1]);
+    var answer = calcEquation(inputValues[0], inputValues[1], inputValues[2], inputValues[3],inputValues[4], inputValues[5], inputValues[6], inputValues[7], inputValues[8], inputValues[9]);
+    console.log(answer);
+    clearCalcInputValues();
+
+}
 
 function createCalculator(calcName, calcDescription) {
     var newCalc = Handlebars.templates.calc({
@@ -152,6 +181,11 @@ window.addEventListener('DOMContentLoaded', function () {
     var searchInput = document.getElementById('navbar-search-input');
         if (searchInput) {
             searchInput.addEventListener('input', doSearchUpdate);
+        }
+
+    var answerButton = document.getElementById('calculate-answer-button'); 
+        if (answerButton) {
+            answerButton.addEventListener('click', doCalculation);
         }
 
 

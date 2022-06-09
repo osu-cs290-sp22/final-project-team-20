@@ -1,29 +1,29 @@
 {
   "BMI": {
     "name": "BMI Calculator",
-    "numInput":2,
-    "numOutput":1,
+    "description": "This calculator will help you calculate your Body Mass Index",
+    "inputs": ["height", "weight"],
     "function":{"arguments":"height,weight","body":"return weight*height*height;"}
   },
 
   "BMRM": {
     "name": "Basal Metabolic Rate for Men",
-    "numInput":3,
-    "numOutput":1,
+    "description": "This calculator returns an estimate of the basal metabolic rate for a man",
+    "inputs": ["height", "weight", "age"],
     "function":{"arguments":"height,weight,age","body":"return 88.362+13.397*weight+4.977*height-5.677*age;"}
   },
 
   "BMRW": {
     "name": "Basal Metabolic Rate for Women",
-    "numInput":3,
-    "numOutput":1,
+    "description": "This calculator returns an estimate of the basal metalbolic rate for a woman",
+    "inputs": ["height", "weight", "age"],
     "function":{"arguments":"height,weight,age","body":"return 447.593+9.247*weight+3.098*height-4.33*age;"}
   },
 
   "HYPOT": {
     "name": "Hypotenuse Calculator",
-    "numInput":2,
-    "numOutput":1,
+    "description": "Want to get there faster? Try out this hypotenuse calculator!",
+    "inputs": ["height", "weight", "age"],
     "function":{"arguments":"leg-one,leg-two","body":"return Math.sqrt(leg-one*leg-one + leg-two*leg-two);"}
   }
 }
