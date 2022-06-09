@@ -1,9 +1,29 @@
-[
-  {"function":{"arguments":"height,weight","body":"return weight*height*height;"}},
+{
+  "BMI": {
+    "name": "BMI Calculator",
+    "numInput":2,
+    "numOutput":1,
+    "function":{"arguments":"height,weight","body":"return weight*height*height;"}
+  },
 
-  {"function":{"arguments":"height,weight,age","body":"return 88.362+13.397*weight+4.977*height-5.677*age;"}},
+  "BMRM": {
+    "name": "Basal Metabolic Rate for Men",
+    "numInput":3,
+    "numOutput":1,
+    "function":{"arguments":"height,weight,age","body":"return 88.362+13.397*weight+4.977*height-5.677*age;"}
+  },
 
-  {"function":{"arguments":"height,weight,age","body":"return 447.593+9.247*weight+3.098*height-4.33*age;"}},
+  "BMRW": {
+    "name": "Basal Metabolic Rate for Women",
+    "numInput":3,
+    "numOutput":1,
+    "function":{"arguments":"height,weight,age","body":"return 447.593+9.247*weight+3.098*height-4.33*age;"}
+  },
 
-  {"function":{"arguments":"leg-one,leg-two","body":"return Math.sqrt(leg-one*leg-one + leg-two*leg-two);"}}
-]
+  "HYPOT": {
+    "name": "Hypotenuse Calculator",
+    "numInput":2,
+    "numOutput":1,
+    "function":{"arguments":"leg-one,leg-two","body":"return Math.sqrt(leg-one*leg-one + leg-two*leg-two);"}
+  }
+}

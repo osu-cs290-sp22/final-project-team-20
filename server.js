@@ -8,7 +8,14 @@ const { nextTick } = require('process');
 var port = process.env.PORT || 8251;
 var app = express();
 
-
+var jsonData = require('./equationData.json');
+// console.log(jsonData);
+// var calcData = {
+//    'equations': []
+// };
+// jsonData.forEach(function(value, i) {
+//    calcData.equations.push(value);
+// })
 
 var calculators = {
    BMI: [ /**/ ],
@@ -38,10 +45,11 @@ app.get('/past-problems',(req,res)=>{
 
 app.get('/calc/:calcName', function (req, res) {
    var calcName = req.params.calcName;
-   if (calculators[calcName]) {
-      res.render('specific', {
-        // placeholder 
-      });
+
+   // console.log(jsonData.BMRM)
+
+   if (jsonData[calcName]) {
+      res.render('specific', jsonData[calcName]);
     } else {
       res.status(404).render('404');
     }
