@@ -39,8 +39,8 @@ app.get('/calc', function(req, res) {
    res.status(200).sendFile(path.join(__dirname, '/public/calc.html'));
 });
 
-app.get('/past-problems',(req,res)=>{
-   res.status(200).render('404');
+app.get('/instructions',(req,res)=>{
+   res.status(200).render('howTo');
   });
 
 app.get('/calc/:calcName', function (req, res) {
