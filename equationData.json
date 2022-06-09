@@ -37,8 +37,8 @@
   "BUOY": {
     "name": "Buoyancy Calculator",
     "description": "Calculates the buoyancy force on a submerged object.",
-    "inputs": ["liquid_density", "gravitational_constant", "displaced_volume"],
-    "function":{"arguments":"density,volume","body":"return liquid_density*displaced_volume*gravitational_constant"}
+    "inputs": ["liquid density", "gravitational constant", "displaced volume"],
+    "function":{"arguments":"liquid density,gravitational constant,displaced volume","body":"return liquid density*displaced volume*gravitational constant"}
   },
 
   "BOOK": {
