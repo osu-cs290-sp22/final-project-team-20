@@ -12,6 +12,21 @@
 
 var allCalcs = [];
 
+function displayAnswer(answer) {
+    var answerBox = document.getElementById('display-answer-modal');
+    answerBox.classList.remove('hidden');
+
+    var answerField = document.querySelector('.modal-body');
+    console.log(answerField);
+    answerField.removeChild(document.getElementById('answer-text'))
+
+    var content = Handlebars.templates.answer({
+        number: answer
+    });
+    answerField.insertAdjacentHTML('beforeend', content);
+
+
+}
 
 function doCalculation() {
     var functionArguments = document.getElementById('current-calc-arguments').textContent;
@@ -43,6 +58,7 @@ function doCalculation() {
     // var answer = calcEquation(inputValues[0], inputValues[1]);
     var answer = calcEquation(inputValues[0], inputValues[1], inputValues[2], inputValues[3],inputValues[4], inputValues[5], inputValues[6], inputValues[7], inputValues[8], inputValues[9]);
     console.log(answer);
+    displayAnswer(answer);
     clearCalcInputValues();
 
 }
