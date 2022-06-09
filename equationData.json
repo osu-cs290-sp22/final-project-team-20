@@ -23,7 +23,7 @@
   "HYPOT": {
     "name": "Hypotenuse Calculator",
     "description": "Want to get there faster? Try out this hypotenuse calculator!",
-    "inputs": ["height", "weight", "age"],
-    "function":{"arguments":"leg-one,leg-two","body":"return Math.sqrt(leg-one*leg-one + leg-two*leg-two);"}
+    "inputs": ["leg_one", "leg_two"],
+    "function":{"arguments":"leg_one,leg_two","body":"return Math.sqrt(leg_one*leg_one + leg_two*leg_two);"}
   }
 }
