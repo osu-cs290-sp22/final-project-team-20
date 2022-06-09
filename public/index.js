@@ -17,7 +17,6 @@ function displayAnswer(answer) {
     answerBox.classList.remove('hidden');
 
     var answerField = document.querySelector('.modal-body');
-    console.log(answerField);
     answerField.removeChild(document.getElementById('answer-text'))
 
     var content = Handlebars.templates.answer({
@@ -32,18 +31,13 @@ function doCalculation() {
     var functionArguments = document.getElementById('current-calc-arguments').textContent;
     var functionBody = document.getElementById('current-calc-body').textContent;
 
-    // console.log(functionArguments);
-    // console.log(functionBody);
-
     var calcEquation = new Function(functionArguments, functionBody);
-    // console.log(calcEquation);
 
     var inputFields = document.getElementsByClassName('calc-input-element');
     var inputValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     for (var i = 0; i < inputFields.length; i++) {
         var check = inputFields[i].querySelector('input, textarea').value;
-        // console.log(check);
         if (!(check && parseFloat(check))) {
             alert('All input fields must be fille with numbers to use the Calculator');
             return;
@@ -57,16 +51,16 @@ function doCalculation() {
 
     // var answer = calcEquation(inputValues[0], inputValues[1]);
     var answer = calcEquation(inputValues[0], inputValues[1], inputValues[2], inputValues[3],inputValues[4], inputValues[5], inputValues[6], inputValues[7], inputValues[8], inputValues[9]);
-    console.log(answer);
     displayAnswer(answer);
     clearCalcInputValues();
 
 }
 
-function createCalculator(calcName, calcDescription) {
+function createCalculator(calcName, calcDescription, calcLink) {
     var newCalc = Handlebars.templates.calc({
         name: calcName,
         description: calcDescription,
+        link: calcLink
     })
     var calcContainer = document.querySelector('main.calc-container');
     calcContainer.insertAdjacentHTML('beforeend', newCalc);
@@ -79,8 +73,6 @@ function showCreateCalcModal() {
 
     modalBackdrop.classList.remove('hidden');
     createCalcModal.classList.remove('hidden');
-
-    console.log('test 1')
 }
 
 function hideCreateCalcModal() {
@@ -134,7 +126,7 @@ function doSearchUpdate() {
 
     allCalcs.forEach(function (calc) {
         if (calcMatchesSearchQuery(calc, searchQuery)) {
-            createCalculator(calc.name, calc.description);
+            createCalculator(calc.name, calc.description, calc.link);
         }
     });
 }
@@ -158,6 +150,9 @@ function parseCalcElem(calcElem) {
     var calcDescriptionElem = calcElem.querySelector('.calc-description');
     calc.description = calcDescriptionElem.textContent.trim();
 
+    var calcLinkElem = calcElem.querySelector('.calc-name a')
+    calc.link = calcLinkElem.pathname;
+
     return calc;
 }
 
@@ -176,13 +171,11 @@ window.addEventListener('DOMContentLoaded', function () {
     var modalCancelButton = document.querySelector('#create-calc-modal .modal-cancel-button');
     if (modalCancelButton) {
         modalCancelButton.addEventListener('click', hideCreateCalcModal);
-        console.log("test 0");
     }
 
     var modalCloseButton = document.querySelector('#create-calc-modal .modal-close-button');
     if (modalCloseButton) {
         modalCloseButton.addEventListener('click', hideCreateCalcModal);
-        console.log("test 0");
     }
 
     var modalAcceptButton = document.querySelector('#create-calc-modal .modal-accept-button');

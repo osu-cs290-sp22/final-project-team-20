@@ -1,20 +1,10 @@
 <article class="calc">
             <div class="calc-content">
-                <p class="calc-name">
-                    <a href="#">{{name}}</a>
+                <p class="calc-name" onclick="javascript:window.location.href='{{link}}'">
+                    <a href = '{{link}}''>{{name}}</a>
                 </p>
                 <p class="calc-description">
                     {{description}}
-                </p>
-                 
-            </div>
-            <div class= "calc-equation-container hidden">
-                <p class="calc-equation-inputs"> 
-                    
-                </p>
-                <p class="calc-equation">
-                    {{equation}}
-                </p>
-            
+                </p>  
             </div>
 </article>
