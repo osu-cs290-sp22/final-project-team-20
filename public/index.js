@@ -39,7 +39,7 @@ function doCalculation() {
     for (var i = 0; i < inputFields.length; i++) {
         var check = inputFields[i].querySelector('input, textarea').value;
         if (!(check && parseFloat(check))) {
-            alert('All input fields must be fille with numbers to use the Calculator');
+            alert('All input fields must be filled with numbers to use the Calculator');
             return;
         }
     }
