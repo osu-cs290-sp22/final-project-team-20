@@ -230,9 +230,9 @@ a:focus {
 
 #calculate-answer-button {
   display: inline-block;
-  position: fixed;
-  right: 45%;
-  bottom: 10%;
+  position: relative;
+  left: 40%;
+  top: 0%;
   height: 60px;
   width: 250px;
   border: none;
@@ -367,7 +367,7 @@ a:focus {
 }
 
 #display-answer-modal {
-  position: fixed;
+  position: relative;
   top: 0;
   bottom: 0;
   left: 0;
