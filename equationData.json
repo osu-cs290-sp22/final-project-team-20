@@ -59,8 +59,8 @@
     "name": "People in the Valley Library",
     "link": "/calc/LIB",
     "description": "Need to know if there will be seats available at the Valley Library?",
-    "inputs": ["weeks_until_finals"],
-    "function":{"arguments":"weeks_until_finals","body":"return weeks_until_finals"}
+    "inputs": ["weeks until finals"],
+    "function":{"arguments":"weeks_until_finals","body":"return 1500/(weeks_until_finals*weeks_until_finals)"}
   }
 
 }
