@@ -3,15 +3,15 @@
     "name": "BMI Calculator",
     "link": "/calc/BMI",
     "description": "This calculator will help you calculate your Body Mass Index",
-    "inputs": ["height", "weight"],
-    "function":{"arguments":"height,weight","body":"return weight*height*height;"}
+    "inputs": ["Height (inches)", "Weight (pounds)"],
+    "function":{"arguments":"height,weight","body":"return weight/(2.2*height*height*.0254*.0254);"}
   },
 
   "BMRM": {
     "name": "Basal Metabolic Rate for Men",
     "link": "/calc/BMRM",
     "description": "This calculator returns an estimate of the basal metabolic rate for a man",
-    "inputs": ["height", "weight", "age"],
+    "inputs": ["Height (inches)", "Weight (pounds)", "Age"],
     "function":{"arguments":"height,weight,age","body":"return 88.362+13.397*weight+4.977*height-5.677*age;"}
   },
 
@@ -19,7 +19,7 @@
     "name": "Basal Metabolic Rate for Women",
     "link": "/calc/BMRW",
     "description": "This calculator returns an estimate of the basal metalbolic rate for a woman",
-    "inputs": ["height", "weight", "age"],
+    "inputs": ["Height (inches)", "Weight (pounds)", "Age"],
     "function":{"arguments":"height,weight,age","body":"return 447.593+9.247*weight+3.098*height-4.33*age;"}
   },
 
@@ -27,7 +27,7 @@
     "name": "Hypotenuse Calculator",
     "link": "/calc/HYPOT",
     "description": "Want to get there faster? Try out this hypotenuse calculator!",
-    "inputs": ["leg_one", "leg_two"],
+    "inputs": ["Side length A", "Side length B"],
     "function":{"arguments":"leg_one,leg_two","body":"return Math.sqrt(leg_one*leg_one + leg_two*leg_two);"}
   },
 
@@ -35,7 +35,7 @@
     "name": "Sphere Surface Area Calculator",
     "link": "/calc/SPHERE",
     "description": "Calculates the surface area of a sphere. Input radius = 69911000 to estimate the surface area (in meters) of Jupiter!",
-    "inputs": ["radius"],
+    "inputs": ["Radius"],
     "function":{"arguments":"radius","body":"return 4*3.1415*radius*radius"}
   },
 
@@ -43,7 +43,7 @@
     "name": "Buoyancy Calculator",
     "link": "/calc/BUOY",
     "description": "Calculates the buoyancy force on a submerged object.",
-    "inputs": ["liquid density", "gravitational constant", "displaced volume"],
+    "inputs": ["Liquid density (kg/m3)", "Gravitational acceleration", "Displaced volume (L)"],
     "function":{"arguments":"liquid density,gravitational constant,displaced volume","body":"return liquid density*displaced volume*gravitational constant"}
   },
 
@@ -51,7 +51,7 @@
     "name": "Just How Big is That Book?",
     "link": "/calc/BOOK",
     "description": "This calculator tells you the total surface area of a book. Useless? Yes. Interesting? Mildly so.",
-    "inputs": ["width", "height", "thickness", "pages"],
+    "inputs": ["Width", "Height", "Thickness", "Pages"],
     "function":{"arguments":"width,height,thickness,pages","body":"return 2*width*height+pages*height*width+height*thickness"}
   },
 
@@ -59,7 +59,7 @@
     "name": "People in the Valley Library",
     "link": "/calc/LIB",
     "description": "Need to know if there will be seats available at the Valley Library?",
-    "inputs": ["weeks until finals"],
+    "inputs": ["Weeks until finals"],
     "function":{"arguments":"weeks_until_finals","body":"return 1500/(weeks_until_finals*weeks_until_finals)"}
   }
 
