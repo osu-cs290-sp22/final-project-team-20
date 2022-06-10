@@ -61,6 +61,22 @@
     "description": "Need to know if there will be seats available at the Valley Library?",
     "inputs": ["Weeks until finals"],
     "function":{"arguments":"weeks_until_finals","body":"return 1500/(weeks_until_finals*weeks_until_finals)"}
+  },
+  
+  "CIRC": {
+    "name": "Number of transistors in a circuit",
+    "link": "/calc/CIRC",
+    "description": "This calculator will tell you the number of CMOS transistors in a circuit based on the type and number of gates.",
+    "inputs": ["NOT Gates", "AND Gates", "OR Gates"],
+    "function":{"arguments":"NOT_Gates,AND_Gates,OR_Gates","body":"return 2*(NOT_Gates) + 6*(AND_Gates) + 6*(OR_Gates)"}
+  },
+
+  "FLIGHT": {
+    "name": "Miles in A Flight",
+    "link": "/calc/FLIGHT",
+    "description": "The calculator will find the number of miles for a flight to and back from your destination. ",
+    "inputs": ["Miles"],
+    "function":{"arguments":"Miles","body":"return 2*Miles"}
   }
 
 }
