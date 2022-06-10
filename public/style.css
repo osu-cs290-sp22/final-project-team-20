@@ -231,7 +231,7 @@ a:focus {
 #calculate-answer-button {
   display: inline-block;
   position: relative;
-  left: 40%;
+  left: 43%;
   top: 0%;
   height: 60px;
   width: 250px;
@@ -246,7 +246,7 @@ a:focus {
 
 #calculate-answer-button:hover,
 #calculate-answer-button:focus {
-  right: 45%;
+  right: 43%;
   bottom: 10%;
   border-radius: 33px;
   font-size: 36px;
@@ -290,8 +290,10 @@ a:focus {
   min-width: 350px;
   min-height: 300px;
   margin: 40px auto;
-  background-color: #fff;
+  background-color: #171717;
   border-radius: 15px;
+  color: #fff;
+  text-align: center;
 }
 
 .modal-header {
@@ -316,7 +318,7 @@ a:focus {
 }
 
 .modal-body {
-  padding: 20px;
+  padding: 70px;
 }
 
 .modal-footer {
@@ -369,11 +371,14 @@ a:focus {
 #display-answer-modal {
   position: relative;
   top: 0;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   right: 0;
   z-index: 1010;
-  overflow: scroll;
+}
+
+.answer-text a {
+  color: #fff;
 }
 
 
