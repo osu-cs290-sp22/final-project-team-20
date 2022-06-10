@@ -9,13 +9,13 @@ var port = process.env.PORT || 8251;
 var app = express();
 
 var jsonData = require('./equationData.json');
-// console.log(jsonData);
-// var calcData = {
-//    'equations': []
-// };
-// jsonData.forEach(function(value, i) {
-//    calcData.equations.push(value);
-// })
+var calcData = {
+   "cards": []
+}
+Object.values(jsonData).forEach(function(value, i) {
+   calcData.cards.push(value);
+});
+
 
 var calculators = {
    BMI: [ /**/ ],
@@ -36,7 +36,8 @@ app.get('/', function(req, res) {
 });
 
 app.get('/calc', function(req, res) {
-   res.status(200).sendFile(path.join(__dirname, '/public/calc.html'));
+   // res.status(200).sendFile(path.join(__dirname, '/public/calc.html'));
+   res.status(200).render('home', calcData);
 });
 
 app.get('/instructions',(req,res)=>{
@@ -45,8 +46,6 @@ app.get('/instructions',(req,res)=>{
 
 app.get('/calc/:calcName', function (req, res) {
    var calcName = req.params.calcName;
-
-   // console.log(jsonData.BMRM)
 
    if (jsonData[calcName]) {
       res.render('specific', jsonData[calcName]);

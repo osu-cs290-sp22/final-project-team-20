@@ -123,7 +123,7 @@ function doSearchUpdate() {
             calcContainer.removeChild(calcContainer.lastChild);
         }
     }
-
+   
     allCalcs.forEach(function (calc) {
         if (calcMatchesSearchQuery(calc, searchQuery)) {
             createCalculator(calc.name, calc.description, calc.link);
@@ -158,6 +158,7 @@ function parseCalcElem(calcElem) {
 
 window.addEventListener('DOMContentLoaded', function () {
     var calcElemsCollection = document.getElementsByClassName('calc');
+    allCalcs = [];
     for (var i = 0; i < calcElemsCollection.length; i++) {
         allCalcs.push(parseCalcElem(calcElemsCollection[i]));
     }
