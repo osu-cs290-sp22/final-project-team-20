@@ -77,6 +77,14 @@
     "description": "The calculator will find the number of miles for a flight to and back from your destination. ",
     "inputs": ["Miles"],
     "function":{"arguments":"Miles","body":"return 2*Miles"}
+  },
+  
+  "SUN": {
+    "name": "Vitamin D",
+    "link": "/calc/SUN",
+    "description": "This calculator will return the amount of Vitamin D you recieve in a year based on the number of days you spend in Corvallis.",
+    "inputs": ["Days"],
+    "function":{"arguments":"Days","body":"return ' Not Enough'"}
   }
 
 }
